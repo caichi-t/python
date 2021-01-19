@@ -26,12 +26,12 @@ def bundle_resize(dir):
         name_list.append(name)
         ext_list.append(ext)
 
-        #予め保存先のフォルダを作成しておき、絶対パスでそのフォルダを指定
+        #予め保存先のフォルダを作成しておき、相対パスでそのフォルダを指定
         out_path = os.path.join(*['./', name + ext])
 
         img = resize(i)
         img.save(out_path, quality=95)
     return
 
-#絶対パスでリサイズしたい画像が入ったフォルダを指定
+#相対パスでリサイズしたい画像が入ったフォルダを指定
 bundle_resize('./')
